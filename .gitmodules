@@ -1,3 +1,6 @@
 [submodule "cpp/cmake"]
 	path = cpp/cmake
 	url = git@github.com:lasyard/coding-cpp-cmake.git
+[submodule "java/maven"]
+	path = java/maven
+	url = git@github.com:lasyard/code-java-maven.git
