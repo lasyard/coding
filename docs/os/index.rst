@@ -1,5 +1,5 @@
-Services
-========
+Operating Systems
+=================
 
 .. toctree::
    :maxdepth: 1
