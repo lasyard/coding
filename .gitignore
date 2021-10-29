@@ -1,0 +1,10 @@
+.*
+!.gitignore
+!.gitmodules
+!.editorconfig
+
+# VSCode files
+!.vscode/
+
+# Readthedocs files
+!.readthedocs.yaml
