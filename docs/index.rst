@@ -7,6 +7,7 @@ Welcome to Lasy's documentation!
    os/index
    services/index
    tools/index
+   quiz/index
 
 Indices and tables
 ==================
