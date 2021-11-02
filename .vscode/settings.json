@@ -4,6 +4,7 @@
     "restructuredtext.preview.sphinx.disabled": true,
     "markdownlint.config": {
         "default": true,
+        "MD024": false,
         "MD033": false
     }
 }
