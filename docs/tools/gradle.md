@@ -2,19 +2,19 @@
 
 ## 6.8.1
 
-```bash
+```sh
 gradle -v
 ```
 
 ### Daemon
 
-```bash
+```sh
 gradle --status
 ```
 
 ### Info
 
-```bash
+```sh
 gradle projects
 gradle tasks
 gradle properties
@@ -22,13 +22,13 @@ gradle properties
 
 ### Dependencies
 
-```bash
+```sh
 gradle dependencies
 ```
 
 ### Build
 
-```bash
+```sh
 gradle check
 gradle test
 gradle build

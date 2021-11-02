@@ -2,34 +2,34 @@
 
 ## 2.3.3
 
-```bash
+```sh
 gpg --version
 ```
 
-```bash
+```sh
 gpg --gen-key
 ```
 
-```bash
+```sh
 gpg --list-keys
 gpg --list-secret-keys
 ```
 
-```bash
+```sh
 gpg --import KEYS
 ```
 
-```bash
+```sh
 gpg --verify cryptopp840.zip.sig
 ```
 
-```bash
+```sh
 gpg --delete-keys ...
 ```
 
 ### Key servers
 
-```bash
+```sh
 gpg --keyserver hkp://pool.sks-keyservers.net --send-keys DE19B5B4842A97FE
 gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys DE19B5B4842A97FE
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys DE19B5B4842A97FE

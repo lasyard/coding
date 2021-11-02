@@ -2,13 +2,13 @@
 
 ## 8.6
 
-```bash
+```sh
 export ver="860"
 ```
 
 ### Download source
 
-```bash
+```sh
 wget https://www.cryptopp.com/cryptopp${ver}.zip
 wget https://www.cryptopp.com/cryptopp${ver}.zip.sig
 ```
@@ -17,12 +17,12 @@ wget https://www.cryptopp.com/cryptopp${ver}.zip.sig
 
 #### Release
 
-```bash
+```sh
 unzip -d ~/workspace/devel/cryptopp${ver}-x86_64-darwin-release cryptopp${ver}.zip
 cd ~/workspace/devel/cryptopp${ver}-x86_64-darwin-release
 ```
 
-```bash
+```sh
 make all
 # Fix dylib id
 install_name_tool -id $(pwd)/libcryptopp.dylib libcryptopp.dylib
@@ -32,11 +32,11 @@ install_name_tool -id $(pwd)/libcryptopp.dylib libcryptopp.dylib
 
 #### Release
 
-```bash
+```sh
 unzip -d ~/workspace/devel/cryptopp${ver}-x86_64-mingw-release cryptopp${ver}.zip
 cd ~/workspace/devel/cryptopp${ver}-x86_64-mingw-release
 ```
 
-```bash
+```sh
 make all
 ```

@@ -13,3 +13,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```sh
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
+
+### Property list utility
+
+```sh
+plutil -p *.plist
+```

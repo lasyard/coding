@@ -2,12 +2,12 @@
 
 ## Generate pub key from private key
 
-```bash
+```sh
 ssh-keygen -y -f id_rsa > id_rsa.pub
 ```
 
 ## Create password free login
 
-```bash
+```sh
 ssh-copy-id las1
 ```

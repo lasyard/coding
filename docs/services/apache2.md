@@ -2,13 +2,13 @@
 
 ## 2.4.48 (macOS Big Sur)
 
-```bash
+```sh
 httpd -v
 ```
 
 ### Start, stop & restart
 
-```bash
+```sh
 sudo apachectl start
 sudo apachectl stop
 sudo apachectl restart
@@ -16,13 +16,13 @@ sudo apachectl restart
 
 ### Error log
 
-```bash
+```sh
 tail -f /var/log/apache2/error_log
 ```
 
 ### Enable server status & info
 
-```bash
+```sh
 sudo vi /etc/apache2/httpd.conf
 ```
 
@@ -35,7 +35,7 @@ sudo vi /etc/apache2/httpd.conf
 > Include /private/etc/apache2/extra/httpd-info.conf
 > ```
 
-```bash
+```sh
 sudo vi /etc/apache2/extra/httpd-info.conf
 ```
 
@@ -54,18 +54,18 @@ sudo vi /etc/apache2/extra/httpd-info.conf
 
 View the sites
 
-```bash
+```sh
 curl http://localhost/server-status
 curl http://localhost/server-info
 ```
 
 ### Enable user dir & php
 
-```bash
+```sh
 mkdir Sites
 ```
 
-```bash
+```sh
 sudo vi /etc/apache2/httpd.conf
 ```
 
@@ -77,7 +77,7 @@ sudo vi /etc/apache2/httpd.conf
 > Include /private/etc/apache2/extra/httpd-userdir.conf
 > ```
 
-```bash
+```sh
 sudo vi /etc/apache2/extra/httpd-userdir.conf
 ```
 
@@ -88,13 +88,13 @@ sudo vi /etc/apache2/extra/httpd-userdir.conf
 
 Remove guest
 
-```bash
+```sh
 sudo rm /etc/apache2/users/Guest.conf
 ```
 
 Create user `xxx`
 
-```bash
+```sh
 sudo vi /etc/apache2/users/xxx.conf
 ```
 

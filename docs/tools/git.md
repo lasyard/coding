@@ -2,19 +2,19 @@
 
 ## 2.30.1
 
-```bash
+```sh
 git --version
 ```
 
 ### See last commit
 
-```bash
+```sh
 git log -p -1
 git show
 ```
 
 ### Stash with untracked files
 
-```bash
+```sh
 git stash --include-untracked
 ```

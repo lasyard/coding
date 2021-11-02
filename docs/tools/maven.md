@@ -2,27 +2,27 @@
 
 ## 3.6.3
 
-```bash
+```sh
 mvn -v
 ```
 
 ### Help
 
-```bash
+```sh
 mvn help:describe -Dplugin=help
 mvn help:describe -Dplugin=help -Ddetail
 ```
 
 ### Info
 
-```bash
+```sh
 mvn help:effective-pom
 mvn help:effective-settings
 ```
 
 ### Build
 
-```bash
+```sh
 mvn compile
 mvn test
 mvn verify

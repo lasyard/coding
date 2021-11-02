@@ -4,7 +4,7 @@
 
 ### Install
 
-```bash
+```sh
 pip3 install sphinx
 pip3 install myst-parser
 pip3 install sphinxcontrib-mermaid
@@ -15,11 +15,11 @@ pip3 install sphinx-rtd-theme
 
 In your working directory
 
-```bash
+```sh
 sphinx-quickstart
 ```
 
-```bash
+```sh
 vi conf.py
 ```
 
@@ -33,6 +33,6 @@ vi conf.py
 > html_theme = 'sphinx_rtd_theme'
 > ```
 
-```bash
+```sh
 make html
 ```
