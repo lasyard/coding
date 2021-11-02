@@ -1,15 +1,18 @@
 #!/usr/bin/env sh
 
+trap 'exit' INT
+
 if ! command -v brew >/dev/null; then
     echo '"Homebrew" is not installed! Run the following command to install it.'
     echo "bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
     exit 1
 fi
 
-brew_install() (
+brew_install2() (
     formula="$1"
-    if command -v "${formula}" >/dev/null; then
-        if [ "$(command -v "${formula}")" = "$(brew --prefix)/bin/${formula}" ]; then
+    cmd="$2"
+    if command -v "${cmd}" >/dev/null; then
+        if [ "$(command -v "${cmd}")" = "$(brew --prefix)/bin/${cmd}" ]; then
             echo "\"${formula}\" is already installed by \"Homebrew\"."
             return
         fi
@@ -24,10 +27,18 @@ brew_install() (
     brew install "${formula}"
 )
 
+brew_install() {
+    brew_install2 "$1" "$1"
+}
+
 for formula in \
     cmake \
     composer \
     ffmpeg \
+    git-flow \
     jq; do
     brew_install "${formula}"
 done
+
+brew_install2 gnupg gpg
+brew_install2 media-info mediainfo
