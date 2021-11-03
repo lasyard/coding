@@ -4,3 +4,6 @@
 [submodule "java/maven"]
 	path = java/maven
 	url = git@github.com:lasyard/code-java-maven.git
+[submodule "java/gradle"]
+	path = java/gradle
+	url = git@github.com:lasyard/coding-java-gradle.git
