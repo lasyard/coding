@@ -1,8 +1,11 @@
 Welcome to Lasy's documentation!
 ================================
 
+.. image:: images/lasydoc.png
+   :alt: lasydoc
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    os/index
    services/index
