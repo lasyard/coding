@@ -16,21 +16,21 @@ gpg --list-secret-keys
 ```
 
 ```sh
-gpg --import KEYS
+gpg --import <key-file>
 ```
 
 ```sh
-gpg --verify cryptopp840.zip.sig
+gpg --verify *.sig
 ```
 
 ```sh
-gpg --delete-keys ...
+gpg --delete-keys <key-fingerprint>
 ```
 
 ### Key servers
 
 ```sh
-gpg --keyserver hkp://pool.sks-keyservers.net --send-keys DE19B5B4842A97FE
-gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys DE19B5B4842A97FE
-gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys DE19B5B4842A97FE
+gpg --keyserver hkp://pool.sks-keyservers.net --send-keys <key-fingerprint>
+gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys <key-fingerprint>
+gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys <key-fingerprint>
 ```
