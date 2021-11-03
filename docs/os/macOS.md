@@ -16,7 +16,7 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 ### System configuration utililty
 
-```bash
+```sh
 scutil --get HostName
 scutil --get LocalHostName
 scutil --get ComputerName
@@ -33,14 +33,20 @@ plutil -p *.plist
 
 ### Package utility
 
-```bash
+```sh
 pkgutil --pkgs
 pkgutil --pkg-info com.apple.pkg.CLTools_Executables
 ```
 
 ### xcode-select
 
-```bash
+```sh
 xcode-select -p
 xcode-select --install
+```
+
+### See cloud docs
+
+```sh
+cd ~/Library/Mobile Documents/com~apple~CloudDocs
 ```
