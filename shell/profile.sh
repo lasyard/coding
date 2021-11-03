@@ -6,6 +6,9 @@ fi
 # Alias
 alias df='df -h'
 alias du='du -h'
+if ! command -v 'l'; then
+    alias l='ls -lah'
+fi
 
 # macOS
 if [ "$(uname)" = "Darwin" ]; then
@@ -35,8 +38,11 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 # Set ssh agent
-eval "$(ssh-agent)"
-ssh-add "${HOME}/.ssh/id_rsa"
+TOKEN="${HOME}/.ssh/id_rsa"
+if [ -f "${TOKEN}" ]; then
+    eval "$(ssh-agent)"
+    ssh-add "${TOKEN}"
+fi
 
 # Set proxy
 proxy() {
