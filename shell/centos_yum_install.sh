@@ -18,8 +18,11 @@ yum_install() {
 }
 
 for package in \
+    java \
     tmux \
     vim \
     wget; do
     yum_install "${package}"
 done
+
+yum_install2 java-1.8.0-openjdk-devel jps

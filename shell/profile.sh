@@ -3,10 +3,19 @@ if [ -d "${HOME}/bin" ]; then
     export PATH="${HOME}/bin:${PATH}"
 fi
 
+# If the current shell is not interactive, the scripts after this are useless.
+# Especially, any output would break utilities like `scp`.
+case $- in
+*i*) ;;
+*)
+    return
+    ;;
+esac
+
 # Alias
 alias df='df -h'
 alias du='du -h'
-if ! command -v 'l'; then
+if ! command -v 'l' >/dev/null; then
     alias l='ls -lah'
 fi
 
@@ -40,8 +49,11 @@ export GPG_TTY
 # Set ssh agent
 TOKEN="${HOME}/.ssh/id_rsa"
 if [ -f "${TOKEN}" ]; then
-    eval "$(ssh-agent)"
-    ssh-add "${TOKEN}"
+    # Do not start agent if the current shell is remotely logged in.
+    if [ -z "${SSH_CLIENT}" ] && [ -z "${SSH_TTY}" ]; then
+        eval "$(ssh-agent)"
+        ssh-add "${TOKEN}"
+    fi
 fi
 
 # Set proxy
