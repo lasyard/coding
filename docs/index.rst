@@ -9,6 +9,7 @@ Welcome to Lasy's documentation!
 
    os/index
    services/index
+   bigdata/index
    tools/index
    devel/index
    quiz/index
