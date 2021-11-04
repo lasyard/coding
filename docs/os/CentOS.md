@@ -13,3 +13,11 @@ vi /etc/hostname
 hostname
 hostname -F /etc/hostname
 ```
+
+### systemctl
+
+```sh
+systemctl status
+systemctl stop firewalld
+systemctl disable firewalld
+```

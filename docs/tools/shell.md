@@ -8,14 +8,14 @@ ${SHELL} --version
 
 ### Translate epoch timestamp
 
-```bash
+```sh
 date -j -f "%s" "+%Y-%m-%d %H:%M:%S" 1607508959
 date -j -f "%s" "+%y%m%d_%H%M%S" 1607508959
 ```
 
 ### Remove executable flags
 
-```bash
+```sh
 sudo chmod -R -x photo
 chmod -R +X photo
 ```
