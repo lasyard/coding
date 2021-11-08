@@ -65,6 +65,6 @@ done
 
 ### Usage
 
-```bash
+```sh
 zkCli.sh -server las1
 ```
