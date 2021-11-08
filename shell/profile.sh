@@ -42,6 +42,11 @@ else
     fi
 fi
 
+# MySql
+if [ -d "/usr/local/mysql/bin" ]; then
+    PATH="${PATH}:/usr/local/mysql/bin"
+fi
+
 # Set GPG_TTY
 GPG_TTY=$(tty)
 export GPG_TTY

@@ -31,6 +31,8 @@ fileType() (
         t='gz'
     elif [ "${e}" = 'bz2' ]; then
         t='bz2'
+    elif [ "${e}" = 'tgz' ]; then
+        t='tar.gz'
     fi
     f1=${f%\.*}
     e1=${f1##*\.}
@@ -60,7 +62,7 @@ extract() {
         ${sudo} tar -poC "$2" -xjf "$1"
         ;;
     *)
-        echo "Unsupported file type $t." >&2
+        echo "Unsupported file type." >&2
         exit 1
         ;;
     esac
