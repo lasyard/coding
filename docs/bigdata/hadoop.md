@@ -22,10 +22,9 @@ sudo mkdir -p /opt/tmp/hadoop
 ### Env
 
 ```sh
-echo "export HADOOP_HOME=\"/opt/hadoop\"" | sudo tee /etc/profile.d/hadoop.sh
+echo "export HADOOP_HOME=\"/opt/hadoop\"" | sudo tee -a /etc/profile.d/hadoop.sh
 # flink will use this.
 echo "export HADOOP_CLASSPATH=\"\$(\${HADOOP_HOME}/bin/hadoop classpath)\"" | sudo tee -a /etc/profile.d/hadoop.sh
-echo "PATH=\"\${HADOOP_HOME}/bin:\${HADOOP_HOME}/sbin:\${PATH}\"" | sudo tee -a /etc/profile.d/hadoop.sh
 ```
 
 ### Config
