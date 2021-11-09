@@ -25,7 +25,7 @@ sudo mkdir -p /opt/tmp/zookeeper
 sudo vi /opt/zookeeper/conf/zoo.cfg
 ```
 
-> ```prop
+> ```properties
 > tickTime=2000
 > dataDir=/opt/tmp/zookeeper
 > clientPort=2181
