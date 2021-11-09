@@ -36,7 +36,8 @@ for formula in \
     composer \
     ffmpeg \
     git-flow \
-    jq; do
+    jq \
+    wget; do
     brew_install "${formula}"
 done
 

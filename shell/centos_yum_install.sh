@@ -18,7 +18,10 @@ yum_install() {
 }
 
 for package in \
+    cpan \
     java \
+    nc \
+    python3 \
     tmux \
     vim \
     wget; do
@@ -26,3 +29,4 @@ for package in \
 done
 
 yum_install2 java-1.8.0-openjdk-devel jps
+yum_install2 perl-devel prove
