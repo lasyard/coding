@@ -71,10 +71,29 @@ sudo vi /etc/apache2/httpd.conf
 
 > ```apache
 > LoadModule php7_module libexec/apache2/libphp7.so
+> # php8
+> LoadModule php_module /usr/local/lib/php/httpd/modules/libphp.so
 > LoadModule rewrite_module libexec/apache2/mod_rewrite.so
 > LoadModule userdir_module libexec/apache2/mod_userdir.so
 >
 > Include /private/etc/apache2/extra/httpd-userdir.conf
+> ```
+
+If using php8
+
+```sh
+sudo vi /etc/apache2/other/php.conf
+```
+
+> ```apache
+> <IfModule php_module>
+>     AddType application/x-httpd-php .php
+>     AddType application/x-httpd-php-source .phps
+>
+>     <IfModule dir_module>
+>         DirectoryIndex index.html index.php
+>     </IfModule>
+> </IfModule>
 > ```
 
 ```sh

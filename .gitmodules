@@ -7,3 +7,6 @@
 [submodule "java/gradle"]
 	path = java/gradle
 	url = git@github.com:lasyard/coding-java-gradle.git
+[submodule "cpp/cmm-script"]
+	path = cpp/cmm-script
+	url = git@github.com:lasyard/cmm-script.git
