@@ -38,9 +38,9 @@ sudo vi /opt/hadoop/etc/hadoop/hadoop-env.sh
 > ```sh
 > export JAVA_HOME=/usr
 > # User privilege
-> export hdfs_NAMENODE_USER=root
-> export hdfs_DATANODE_USER=root
-> export hdfs_SECONDARYNAMENODE_USER=root
+> export HDFS_NAMENODE_USER=root
+> export HDFS_DATANODE_USER=root
+> export HDFS_SECONDARYNAMENODE_USER=root
 > export YARN_RESOURCEMANAGER_USER=root
 > export YARN_NODEMANAGER_USER=root
 > ```
@@ -221,3 +221,21 @@ curl http://las1:8088/ui2/
 ```sh
 yarn jar hadoop-wc-1.0.0-SNAPSHOT.jar
 ```
+
+## 2.10.1
+
+```sh
+export ver="2.10.1"
+```
+
+### Config
+
+```sh
+sudo vi /opt/hadoop/etc/hadoop/slaves
+```
+
+> ```text
+> las1
+> las2
+> las3
+> ```

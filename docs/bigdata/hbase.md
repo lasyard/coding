@@ -67,11 +67,20 @@ sudo vi /opt/hbase/conf/regionservers
 
 ```sh
 for host in las2 las3; do
-    for file in /opt/hbase/conf/{hbase-env.sh,hbase-site.xml,regionservers}; do
+    for file in /opt/hbase/conf/{hbase-env.sh,hbase-site.xml}; do
         scp "${file}" "${host}:${file}"
     done
 done
 ```
+
+Replace `hadoop` bundles (in all nodes)
+
+```sh
+rm -rf /opt/hbase/lib/hadoop-*.jar
+find /opt/hadoop/share/hadoop/ -name 'hadoop-*.jar' -exec cp {} /opt/hbase/lib/ \;
+```
+
+**NOTE**: Do not use hadoop 3.
 
 ### Run
 
