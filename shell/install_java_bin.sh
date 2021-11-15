@@ -73,10 +73,10 @@ add_path() {
     # $app: the app name
     if [ -d "$1" ]; then
         if [ -d "/etc/profile.d" ]; then
-            echo "PATH=\"$1:\${PATH}\"" | sudo tee -a "/etc/profile.d/${app}.sh"
+            echo "PATH=\"$1:\${PATH}\"" | sudo tee "/etc/profile.d/${app}.sh"
             echo "\"$1\" added to \"/etc/profile.d/${app}.sh\"."
         elif [ -d "/etc/paths.d" ]; then
-            echo "$1" | sudo tee -a "/etc/paths.d/${app}.sh"
+            echo "$1" | sudo tee "/etc/paths.d/${app}.sh"
             echo "\"$1\" added to \"/etc/paths.d/${app}.sh\"."
         else
             echo "Cannot find \"/etc/profile.d\" or \"/etc/paths.d\" to put path \"$1\""
