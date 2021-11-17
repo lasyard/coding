@@ -48,6 +48,8 @@ done
 curl http://las1:8080/
 ```
 
+**NOTE**: Spark workers is binding to 8081, which conflict with Flink.
+
 ```sh
 spark-submit --master spark://las1:7077 /opt/spark/examples/src/main/python/pi.py 10
 ```
