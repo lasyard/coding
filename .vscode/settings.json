@@ -1,6 +1,7 @@
 {
     "cmake.configureOnOpen": false,
     "restructuredtext.confPath": "${workspaceFolder}/docs",
+    "restructuredtext.languageServer.disabled": true,
     "restructuredtext.preview.sphinx.disabled": true,
     "markdownlint.config": {
         "default": true,
