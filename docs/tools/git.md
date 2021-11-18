@@ -6,6 +6,12 @@
 git --version
 ```
 
+### Config
+
+```sh
+git config push.recurseSubmodules check
+```
+
 ### See last commit
 
 ```sh
