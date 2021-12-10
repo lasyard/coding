@@ -4,6 +4,8 @@
 !.gitmodules
 !.editorconfig
 
+*.log
+
 # VSCode files
 !.vscode/
 
