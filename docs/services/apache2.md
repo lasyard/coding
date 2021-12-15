@@ -1,10 +1,58 @@
 # apache2
 
+## 2.4.51 (Debian 11)
+
+### Restart
+
+```sh
+systemctl restart apache2
+```
+
+### User and group
+
+```sh
+sudo vi /etc/apache2/envvars
+```
+
+> ```sh
+> export APACHE_RUN_USER=www-data
+> export APACHE_RUN_GROUP=www-data
+> ```
+
+### Config
+
+```sh
+sudo vi /etc/apache2/apache2.conf
+```
+
+### Enable module
+
+```sh
+sudo a2enmod rewrite
+```
+
+### Site
+
+```sh
+sudo vi /etc/apache2/sites-enabled/000-default.conf
+```
+
+> ```apache
+> <VirtualHost *:80>
+>    DocumentRoot /www/root
+>    <Directory "/www/root">
+>        Options Indexes FollowSymLinks
+>        AllowOverride All
+>        Require all granted
+>    </Directory>
+> </VirtualHost>
+> ```
+
+## 2.4.51 (macOS Monterey)
+
 ```sh
 httpd -v
 ```
-
-## 2.4.48 (macOS Monterey)
 
 ### Enable php
 

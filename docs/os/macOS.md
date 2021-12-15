@@ -48,5 +48,5 @@ xcode-select --install
 ### See cloud docs
 
 ```sh
-cd ~/Library/Mobile Documents/com~apple~CloudDocs
+cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/
 ```

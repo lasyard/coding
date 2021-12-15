@@ -2,6 +2,9 @@
 if [ -d "${HOME}/bin" ]; then
     export PATH="${HOME}/bin:${PATH}"
 fi
+if [ -d "/usr/local/sbin" ]; then
+    export PATH="${PATH}:/usr/local/sbin"
+fi
 
 # If the current shell is not interactive, the scripts after this are useless.
 # Especially, any output would break utilities like `scp`.
