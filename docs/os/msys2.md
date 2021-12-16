@@ -14,6 +14,11 @@ In MinGW
 ```sh
 pacman -S --needed zip
 pacman -S --needed unzip
+pacman -S --needed rsync
+pacman -S --needed vim
+```
+
+```sh
 pacman -S --needed base-devel
 pacman -S --needed ${MINGW_PACKAGE_PREFIX}-toolchain
 ```
