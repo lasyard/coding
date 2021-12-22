@@ -11,6 +11,7 @@ ${SHELL} --version
 ```sh
 date -j -f "%s" "+%Y-%m-%d %H:%M:%S" 1607508959
 date -j -f "%s" "+%y%m%d_%H%M%S" 1607508959
+date -j -f "%y%m%d%H%M%S" "+%s" 170801000000
 ```
 
 ### Remove executable flags

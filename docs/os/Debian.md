@@ -47,4 +47,5 @@ sudo apt satisfy apache2 php php-dev php-pear php-mysql
 ```sh
 systemctl get-default
 systemctl list-units --type=target
+sudo systemctl edit --full apache2.service
 ```
