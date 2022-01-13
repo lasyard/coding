@@ -12,6 +12,7 @@ Welcome to Lasy's documentation!
    bigdata/index
    tools/index
    devel/index
+   study/index
    quiz/index
 
 Indices and tables
