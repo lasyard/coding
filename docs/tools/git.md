@@ -9,6 +9,7 @@ git --version
 ### Config
 
 ```sh
+git config --global init.defaultBranch main
 git config --global push.recurseSubmodules check
 ```
 
