@@ -19,6 +19,11 @@ pacman -S --needed vim
 ```
 
 ```sh
+pacman -S --needed ${MINGW_PACKAGE_PREFIX}-ffmpeg
+pacman -S --needed ${MINGW_PACKAGE_PREFIX}-jq
+```
+
+```sh
 pacman -S --needed base-devel
 pacman -S --needed ${MINGW_PACKAGE_PREFIX}-toolchain
 ```
