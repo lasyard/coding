@@ -15,6 +15,18 @@ tar -C ~/workspace/devel/ -xjf wxWidgets-${ver}.tar.bz2
 cd ~/workspace/devel/wxWidgets-${ver}
 ```
 
+### Build (CMake 3.22.1)
+
+```sh
+cmake . -DCMAKE_INSTALL_PREFIX=~/workspace/devel
+cmake --build . --target install
+```
+
+```sh
+# `wx-config` is used by cmake to find wxWidgets on Unix-like system, so set the path.
+export PATH="${PATH}:${HOME}/workspace/devel/bin"
+```
+
 ### Build (macOS Big Sur)
 
 #### Debug

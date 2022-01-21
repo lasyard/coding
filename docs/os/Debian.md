@@ -39,7 +39,7 @@ sudo apt satisfy curl
 ```
 
 ```sh
-sudo apt satisfy apache2 php php-dev php-pear php-mysql
+sudo apt satisfy apache2 php php-dev php-pear php-mysql php-mbstring
 ```
 
 ### systemctl
