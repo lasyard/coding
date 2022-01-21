@@ -35,7 +35,6 @@ for formula in \
     cmake \
     composer \
     ffmpeg \
-    git-flow \
     jq \
     node \
     wget; do
