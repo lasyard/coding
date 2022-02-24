@@ -74,13 +74,19 @@ proxy() {
     if [ "$1" = 'off' ]; then
         export http_proxy=
         export https_proxy=
+        export all_proxy=
         return
     fi
-    proxy="http://localhost:1087"
     if nc -z localhost 1087; then
-        export http_proxy="${proxy}"
-        export https_proxy="${proxy}"
-        echo "Set http_proxy & https_proxy to \"${proxy}\"."
+        proxy="localhost:1087"
+    elif nc -z localhost 7890; then
+        proxy="localhost:7890"
+    fi
+    if [ -n "${proxy}" ]; then
+        export http_proxy="http://${proxy}"
+        export https_proxy="http://${proxy}"
+        export all_proxy="socks5://${proxy}"
+        echo "Set http_proxy, https_proxy and all_proxy to \"${proxy}\"."
     else
         echo "No proxy found."
     fi
