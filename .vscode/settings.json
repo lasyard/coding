@@ -1,12 +1,12 @@
 {
     "cmake.configureOnOpen": false,
-    "restructuredtext.confPath": "${workspaceFolder}/docs",
-    "restructuredtext.languageServer.disabled": true,
     "restructuredtext.preview.sphinx.disabled": true,
     "markdownlint.config": {
         "default": true,
         "MD024": false,
         "MD033": false
     },
-    "makefile.configureOnOpen": false
+    "makefile.configureOnOpen": false,
+    "esbonio.sphinx.confDir": "${workspaceFolder}/docs",
+    "esbonio.server.enabled": false
 }

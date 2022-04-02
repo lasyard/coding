@@ -24,6 +24,12 @@ cd ~/workspace/devel/cryptopp${ver}-x86_64-darwin-release
 
 ```sh
 make all
+make install PREFIX=~/workspace/devel
+```
+
+Do this if you do not want to install
+
+```sh
 # Fix dylib id
 install_name_tool -id $(pwd)/libcryptopp.dylib libcryptopp.dylib
 ```
