@@ -22,6 +22,12 @@ cmake . -DCMAKE_INSTALL_PREFIX=~/workspace/devel
 cmake --build . --target install
 ```
 
+Add `RPATH` for `wxrc` on macOS
+
+```sh
+install_name_tool -add_rpath "@executable_path/../lib" ~/workspace/devel/bin/wxrc
+```
+
 ```sh
 # `wx-config` is used by cmake to find wxWidgets on Unix-like system, so set the path.
 export PATH="${PATH}:${HOME}/workspace/devel/bin"
