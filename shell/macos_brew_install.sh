@@ -32,6 +32,7 @@ brew_install() {
 }
 
 for formula in \
+    clang-format \
     cmake \
     composer \
     ffmpeg \

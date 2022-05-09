@@ -2,10 +2,6 @@
 if [ -d "${HOME}/bin" ]; then
     export PATH="${HOME}/bin:${PATH}"
 fi
-# Add compiled bins.
-if [ -d "${HOME}/workspace/devel/bin" ]; then
-    export PATH="${PATH}:${HOME}/workspace/devel/bin"
-fi
 if [ -d "/usr/local/sbin" ]; then
     export PATH="${PATH}:/usr/local/sbin"
 fi
