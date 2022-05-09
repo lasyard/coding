@@ -24,7 +24,7 @@ cd ~/workspace/devel/cryptopp${ver}-x86_64-darwin-release
 
 ```sh
 make all
-make install PREFIX=~/workspace/devel
+make install PREFIX=~
 ```
 
 Do this if you do not want to install

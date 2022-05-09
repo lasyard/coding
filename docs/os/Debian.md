@@ -42,6 +42,14 @@ sudo apt satisfy curl
 sudo apt satisfy apache2 php php-dev php-pear php-mysql php-mbstring
 ```
 
+```sh
+sudo apt satisfy cmake
+```
+
+```sh
+sudo apt satisfy libcrypto++-dev libwxgtk3.0-gtk3-dev
+```
+
 ### systemctl
 
 ```sh

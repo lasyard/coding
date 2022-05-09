@@ -18,19 +18,20 @@ cd ~/workspace/devel/wxWidgets-${ver}
 ### Build (CMake 3.22.1)
 
 ```sh
-cmake . -DCMAKE_INSTALL_PREFIX=~/workspace/devel
+cmake -S . -B build-x86_64-darwin-release -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~
+cd build-x86_64-darwin-release
 cmake --build . --target install
 ```
 
 Add `RPATH` for `wxrc` on macOS
 
 ```sh
-install_name_tool -add_rpath "@executable_path/../lib" ~/workspace/devel/bin/wxrc
+install_name_tool -add_rpath "@executable_path/../lib" ~/bin/wxrc
 ```
 
 ```sh
 # `wx-config` is used by cmake to find wxWidgets on Unix-like system, so set the path.
-export PATH="${PATH}:${HOME}/workspace/devel/bin"
+export PATH="${PATH}:${HOME}/bin"
 ```
 
 ### Build (macOS Big Sur)

@@ -18,6 +18,7 @@ git config --global push.recurseSubmodules check
 ```sh
 git log -p -1
 git show
+git show --name-status
 ```
 
 ### Stash with untracked files
