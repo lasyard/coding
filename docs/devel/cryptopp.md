@@ -34,6 +34,19 @@ Do this if you do not want to install
 install_name_tool -id $(pwd)/libcryptopp.dylib libcryptopp.dylib
 ```
 
+#### Debug
+
+```sh
+unzip -d ~/workspace/devel/cryptopp${ver}-x86_64-darwin-debug cryptopp${ver}.zip
+cd ~/workspace/devel/cryptopp${ver}-x86_64-darwin-debug
+```
+
+```sh
+export CXXFLAGS="-DDEBUG -g -O0"
+make all
+make install PREFIX=~/workspace/devel
+```
+
 ### Build (MSYS2)
 
 #### Release

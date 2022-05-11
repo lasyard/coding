@@ -17,6 +17,8 @@ cd ~/workspace/devel/wxWidgets-${ver}
 
 ### Build (CMake 3.22.1)
 
+#### Release
+
 ```sh
 cmake -S . -B build-x86_64-darwin-release -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~
 cd build-x86_64-darwin-release
@@ -33,6 +35,16 @@ install_name_tool -add_rpath "@executable_path/../lib" ~/bin/wxrc
 # `wx-config` is used by cmake to find wxWidgets on Unix-like system, so set the path.
 export PATH="${PATH}:${HOME}/bin"
 ```
+
+#### Debug
+
+```sh
+cmake -S . -B build-x86_64-darwin-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/workspace/devel
+cd build-x86_64-darwin-debug
+cmake --build . --target install
+```
+
+The following steps is similar with Release Build.
 
 ### Build (macOS Big Sur)
 
