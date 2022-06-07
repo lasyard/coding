@@ -19,12 +19,15 @@ yum_install() {
 
 for package in \
     cpan \
+    git \
     java \
     nc \
     python3 \
     tmux \
+    unzip \
     vim \
-    wget; do
+    wget \
+    zip; do
     yum_install "${package}"
 done
 
