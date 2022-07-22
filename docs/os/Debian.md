@@ -43,7 +43,7 @@ sudo apt satisfy apache2 php php-dev php-pear php-mysql php-mbstring
 ```
 
 ```sh
-sudo apt satisfy cmake
+sudo apt satisfy cmake gdb
 ```
 
 ```sh
