@@ -9,8 +9,8 @@ exiftool -ver
 ### Move files
 
 ```sh
-exiftool -ext jpg -if '${DateTimeOriginal} and ${Keywords} and ${Model}' -d '%Y/%Y%m/%Y%m%d_%H%M%S' "-FileName<${HOME}/Pictures/photo/\${DateTimeOriginal}_\${Keywords;s/, /_/}_\${Model;tr/ /_/}%-3c.jpg" *.jpg
-exiftool -ext jpg -if '${DateTimeOriginal} and ${Keywords} and not ${Model}' -d '%Y/%Y%m/%Y%m%d_%H%M%S' "-FileName<${HOME}/Pictures/photo/\${DateTimeOriginal}_\${Keywords;s/, /_/}%-.3c.jpg" *.jpg
+exiftool -fast2 -ext jpg -if '${DateTimeOriginal} and ${Keywords} and ${Model}' -d '%Y/%Y%m/%Y%m%d_%H%M%S' "-FileName<${HOME}/Pictures/photo/\${DateTimeOriginal}_\${Keywords;s/, /_/}_\${Model;tr/ /_/}%+.3nc.jpg" *.jpg
+exiftool -fast2 -ext jpg -if '${DateTimeOriginal} and ${Keywords} and not ${Model}' -d '%Y/%Y%m/%Y%m%d_%H%M%S' "-FileName<${HOME}/Pictures/photo/\${DateTimeOriginal}_\${Keywords;s/, /_/}%+.3nc.jpg" *.jpg
 ```
 
 ### Modify time
