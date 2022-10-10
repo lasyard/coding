@@ -25,3 +25,9 @@ exiftool -ext jpg '-AllDates=2020:02:02 20:20:20' −overwrite_original *.jpg
 # set time to one day before
 exiftool -ext jpg -if '${DateTimeOriginal}' -DateTimeOriginal-='1 00:00:00' −overwrite_original *.jpg
 ```
+
+### Modify Camera Model
+
+```sh
+exiftool -ext jpg -if 'not ${Model}' '-Model=DUK-AL20' -overwrite_original *.jpg
+```
