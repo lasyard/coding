@@ -50,3 +50,20 @@ xcode-select --install
 ```sh
 cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/
 ```
+
+### Create disk image
+
+```sh
+hdiutil makehybrid -o "dir.udf" -udf "dir/"
+```
+
+### Manage Spotlight metadata store
+
+```sh
+# show status
+sudo mdutil -s "/Volumes/Macintosh HD"
+
+# turn off indexing and searching
+sudo mdutil -i off -d "/Volumes/RemovableDisk"
+sudo mdutil -X "/Volumes/RemovableDisk"
+```
