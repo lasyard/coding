@@ -1,4 +1,4 @@
-# MYSYS2
+# MSYS2
 
 ## 20211130
 
@@ -14,12 +14,10 @@ In MinGW
 ```sh
 pacman -S --needed zip
 pacman -S --needed unzip
-pacman -S --needed rsync
 pacman -S --needed vim
 ```
 
 ```sh
-pacman -S --needed ${MINGW_PACKAGE_PREFIX}-ffmpeg
 pacman -S --needed ${MINGW_PACKAGE_PREFIX}-jq
 ```
 

@@ -9,9 +9,9 @@ ${SHELL} --version
 ### Translate epoch timestamp
 
 ```sh
-date -j -f "%s" "+%Y-%m-%d %H:%M:%S" 1607508959
-date -j -f "%s" "+%y%m%d_%H%M%S" 1607508959
-date -j -f "%y%m%d%H%M%S" "+%s" 170801000000
+date -j -f "%s" "+%Y-%m-%d %H:%M:%S" 1012586522
+date -j -f "%s" "+%y%m%d_%H%M%S" 1012586522
+date -j -f "%y%m%d%H%M%S" "+%s" 020202020202
 ```
 
 ### Remove executable flags
