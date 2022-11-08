@@ -11,6 +11,7 @@ git --version
 ```sh
 git config --global init.defaultBranch main
 git config --global push.recurseSubmodules check
+git config --global url.git@github.com:.insteadOf https://github.com/
 ```
 
 ### See last commit
