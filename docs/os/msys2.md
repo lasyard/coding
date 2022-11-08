@@ -15,6 +15,7 @@ In MinGW
 pacman -S --needed zip
 pacman -S --needed unzip
 pacman -S --needed vim
+pacman -S --needed git
 ```
 
 ```sh
