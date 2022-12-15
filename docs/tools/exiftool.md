@@ -10,7 +10,6 @@ exiftool -ver
 
 ```sh
 exiftool -fast2 -ext jpg -if '${DateTimeOriginal} and ${Keywords} and ${Model}' "-FileName<${HOME}/Pictures/photo/\${DateTimeOriginal#;DateFmt('%Y/%Y%m')}/\${Model;tr/ /_/}/\${DateTimeOriginal#;DateFmt('%Y%m%d_%H%M%S')}_\${Keywords;s/, /_/}%+3c.jpg" *.jpg
-exiftool -fast2 -ext jpg -if '${DateTimeOriginal} and ${Keywords} and not ${Model}' "-FileName<${HOME}/Pictures/photo/\${DateTimeOriginal#;DateFmt('%Y/%Y%m')}/\${DateTimeOriginal#;DateFmt('%Y%m%d_%H%M%S')}_\${Keywords;s/, /_/}%+3c.jpg" *.jpg
 ```
 
 ### Modify time
@@ -30,5 +29,5 @@ exiftool -ext jpg -if '${DateTimeOriginal}' -DateTimeOriginal-='1 00:00:00' −o
 ### Modify Camera Model
 
 ```sh
-exiftool -ext jpg -if 'not ${Model}' '-Model=DUK-AL20' -overwrite_original *.jpg
+exiftool -ext jpg -if 'not ${Model}' '-Model=UNKNOWN' -overwrite_original *.jpg
 ```
