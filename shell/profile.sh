@@ -15,6 +15,10 @@ case $- in
     ;;
 esac
 
+if [ "${SHELL}" == "/bin/bash" ] && [ -f "${HOME}/.bashrc" ]; then
+    source ${HOME}/.bashrc
+fi
+
 # Alias
 alias df='df -h'
 alias du='du -h'
