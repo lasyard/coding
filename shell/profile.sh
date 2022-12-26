@@ -15,7 +15,7 @@ case $- in
     ;;
 esac
 
-if [ "${SHELL}" == "/bin/bash" ] && [ -f "${HOME}/.bashrc" ]; then
+if [ "${SHELL}" = "/bin/bash" ] && [ -f "${HOME}/.bashrc" ]; then
     source ${HOME}/.bashrc
 fi
 
