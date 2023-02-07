@@ -43,3 +43,18 @@ ffmpeg -i input.mkv -c:a copy -c:v copy -f mp4 out.mp4
 # mp4 cannot contain ass subtitle
 ffmpeg -i input.mkv -map 0:s:1 -c:s copy -f ass out.ass
 ```
+
+### Concat files
+
+```sh
+vi confiles.txt
+```
+
+> ```text
+> file 'a.mp3'
+> file 'b.mp3'
+> ```
+
+```sh
+ffmpeg -f concat -safe 0 -i confiles.txt -c copy out.mp3
+```

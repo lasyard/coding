@@ -20,6 +20,7 @@ pacman -S --needed git
 
 ```sh
 pacman -S --needed ${MINGW_PACKAGE_PREFIX}-jq
+pacman -S --needed ${MINGW_PACKAGE_PREFIX}-ffmpeg
 ```
 
 ```sh
