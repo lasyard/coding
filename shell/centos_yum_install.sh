@@ -20,6 +20,7 @@ yum_install() {
 for package in \
     cpan \
     git \
+    htop \
     java \
     nc \
     python3 \
