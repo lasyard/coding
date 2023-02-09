@@ -47,4 +47,4 @@ endif
 
 set hlsearch
 
-highlight LineNr ctermbg=DarkBlue ctermfg=Grey
+colorscheme ron
