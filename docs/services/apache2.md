@@ -62,14 +62,17 @@ Sign the php lib
 
 ```sh
 codesign --sign 'XXX' --force --keychain ~/Library/Keychains/login.keychain-db /usr/local/opt/php/lib/httpd/modules/libphp.so
+codesign -dv --verbose=4 /usr/local/opt/php/lib/httpd/modules/libphp.so
 ```
+
+See the line begin with `Authority=`, the value may be `XXX's CA`.
 
 ```sh
 sudo vi /etc/apache2/httpd.conf
 ```
 
 > ```apache
-> LoadModule php_module /usr/local/opt/php/lib/httpd/modules/libphp.so "XXX"
+> LoadModule php_module /usr/local/opt/php/lib/httpd/modules/libphp.so "XXX's CA"
 > ```
 
 ```sh
@@ -87,7 +90,9 @@ sudo vi /etc/apache2/other/php.conf
 > </IfModule>
 > ```
 
-It works, but code sign is required when you load php extensions and there is no solutions! So give up it.
+```sh
+apachectl configtest
+```
 
 ## 2.4.48 (macOS Big Sur)
 
