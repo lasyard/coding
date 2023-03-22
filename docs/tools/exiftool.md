@@ -31,3 +31,7 @@ exiftool -ext jpg -if '${DateTimeOriginal}' -DateTimeOriginal-='1 00:00:00' −o
 ```sh
 exiftool -ext jpg -if 'not ${Model}' '-Model=UNKNOWN' -overwrite_original *.jpg
 ```
+
+```sh
+exiftool -TagsFromFile source.jpg -Model -overwrite_original target.jpg
+```
