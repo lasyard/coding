@@ -77,10 +77,8 @@ proxy() {
         export all_proxy=
         return
     fi
-    if nc -z localhost 1087; then
-        proxy="localhost:1087"
-    elif nc -z localhost 7890; then
-        proxy="localhost:7890"
+    if nc -z proxy 1088; then
+        proxy="proxy:1088"
     fi
     if [ -n "${proxy}" ]; then
         export http_proxy="http://${proxy}"

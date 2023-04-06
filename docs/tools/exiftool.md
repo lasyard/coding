@@ -30,6 +30,8 @@ exiftool -ext jpg -if '${DateTimeOriginal}' -DateTimeOriginal-='1 00:00:00' −o
 
 ```sh
 exiftool -ext jpg -if 'not ${Model}' '-Model=UNKNOWN' -overwrite_original *.jpg
+# Some cameras write `Software` instead of `Model`
+exiftool -ext jpg -if 'not ${Model}' -if '${Software}' '-Model<${Software;$_=substr($_, 0, 8)}' -overwrite_original *.jpg
 ```
 
 ```sh

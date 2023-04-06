@@ -48,7 +48,7 @@ dbgen 用于生成数据
 生成 CSV 格式的数据，文件名为 `lineitem.tbl`, 分隔符为 `|`, 每行末尾的分隔符可能多余，先去掉
 
 ```sh
-sed -i -e 's/|$//g' lineitem.tbl
+sed -i -e 's/|$//g' *.tbl
 ```
 
 #### qgen
