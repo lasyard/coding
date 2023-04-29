@@ -22,7 +22,7 @@ fi
 
 RSYNC_ARGS="--exclude=.* -RvrutO ${EXTRA_OPTS} --modify-window=3"
 # --iconv support start from rsync 3.x
-if [ $(rsync --version | head -n 1 | grep '\d\+' -o | head -n 1) ] >2; then
+if [ $(rsync --version | head -n 1 | grep '\d\+' -o | head -n 1) -ge 3 ]; then
     RSYNC_ARGS="${RSYNC_ARGS} --iconv=utf-8-mac,utf-8"
 fi
 

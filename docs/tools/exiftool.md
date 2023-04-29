@@ -38,7 +38,7 @@ exiftool -ext jpg -if 'not ${Model}' -if '${Software}' '-Model<${Software;$_=sub
 exiftool -TagsFromFile source.jpg -Model -overwrite_original target.jpg
 ```
 
-### Remove thumb
+### Remove thumbnail image
 
 ```sh
 exiftool -ext jpg -if '${ThumbnailImage}' -ThumbnailImage= -overwrite_original -R .
