@@ -13,3 +13,6 @@
 [submodule "js/npm"]
 	path = js/npm
 	url = git@github.com:lasyard/coding-js-npm.git
+[submodule "cpp/msvc"]
+	path = cpp/msvc
+	url = git@github.com:lasyard/coding-cpp-msvc.git
