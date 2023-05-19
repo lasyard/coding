@@ -56,3 +56,21 @@ timedatectl list-timezones
 timedatectl set-timezone Asia/Shanghai
 timedatectl set-timezone Europe/London
 ```
+
+### Install development tools
+
+```sh
+yum groupinstall "Development Tools"
+```
+
+```sh
+yum install centos-release-scl
+yum install devtoolset-11
+scl enable devtoolset-11 bash
+```
+
+The last command will open a new shell in which the new toolset enabled, or put the following in `.bash_profile`
+
+```sh
+source /opt/rh/devtoolset-11/enable
+```
