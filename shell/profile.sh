@@ -35,6 +35,10 @@ if [ "$(uname)" = "Darwin" ]; then
         # Use original vim for fc
         export FCEDIT=vim
     fi
+else
+    if command -v 'vim' >/dev/null; then
+        alias vi=vim
+    fi
 fi
 
 # Set JAVA_HOME
@@ -89,3 +93,7 @@ proxy() {
         echo "No proxy found."
     fi
 }
+
+if [ -x "/opt/rh/devtoolset-11/enable" ]; then
+    source /opt/rh/devtoolset-11/enable
+fi
