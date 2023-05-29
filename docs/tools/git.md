@@ -27,3 +27,9 @@ git show --name-status
 ```sh
 git stash --include-untracked
 ```
+
+### Clean
+
+```sh
+git clean -dxf
+```
