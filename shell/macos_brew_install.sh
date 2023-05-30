@@ -44,3 +44,4 @@ done
 
 brew_install2 gnupg gpg
 brew_install2 media-info mediainfo
+brew_install2 graphviz dot
