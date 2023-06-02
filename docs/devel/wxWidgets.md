@@ -15,7 +15,7 @@ tar -C ~/workspace/devel/ -xjf wxWidgets-${ver}.tar.bz2
 cd ~/workspace/devel/wxWidgets-${ver}
 ```
 
-### Build (CMake 3.22.1)
+### Build (macOS, CMake 3.22.1)
 
 #### Release
 
