@@ -7,7 +7,7 @@ if [[ $# -lt 1 ]]; then
     exit 1
 fi
 
-declare -a OPTS=("-c:a" "aac" "-c:v" "libx264")
+declare -a OPTS=("-c:a" "aac" "-c:v" "libx264" "-brand" "mp42")
 declare -a VFS
 
 for ((i = 1; i <= $#; ++i)); do
@@ -52,7 +52,7 @@ fi
 
 if [[ -z "${CRFSET}" ]]; then
     OPTS+=("-crf")
-    OPTS+=("18")
+    OPTS+=("23")
 fi
 if [[ -z "${NOHQDN}" ]]; then
     VFS+=("hqdn3d")
