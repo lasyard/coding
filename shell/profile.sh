@@ -79,16 +79,11 @@ proxy() {
         export http_proxy=
         export https_proxy=
         export all_proxy=
+        echo "Unset proxies."
         return
     fi
-    if nc -z proxy 1088; then
-        proxy="proxy:1088"
-    fi
-    if [ -n "${proxy}" ]; then
-        export http_proxy="http://${proxy}"
-        export https_proxy="http://${proxy}"
-        export all_proxy="socks5://${proxy}"
-        echo "Set http_proxy, https_proxy and all_proxy to \"${proxy}\"."
+    if [ -x "${HOME}/.proxy.sh" ]; then
+        source "${HOME}/.proxy.sh"
     else
         echo "No proxy found."
     fi
