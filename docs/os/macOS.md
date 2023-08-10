@@ -36,6 +36,8 @@ plutil -p *.plist
 ```sh
 pkgutil --pkgs
 pkgutil --pkg-info com.apple.pkg.CLTools_Executables
+pkgutil --files com.apple.pkg.CLTools_Executables
+sudo pkgutil --forget com.apple.pkg.CLTools_Executables
 ```
 
 ### xcode-select
