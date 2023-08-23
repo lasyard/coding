@@ -30,3 +30,10 @@ mvn package
 mvn package -DskipTests
 mvn clean
 ```
+
+### Install
+
+```sh
+mvn install
+mvn install -Dmaven.javadoc.skip=true
+```

@@ -1,5 +1,18 @@
 # CentOS
 
+## 8.3
+
+```sh
+cat /etc/centos-release
+```
+
+### Change repo url
+
+```sh
+sed -i -e "s|mirrorlist=|#mirrorlist=|" /etc/yum.repos.d/CentOS-Linux-*.repo
+sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|" /etc/yum.repos.d/CentOS-Linux-*.repo
+```
+
 ## 7.6
 
 ### EPEL
