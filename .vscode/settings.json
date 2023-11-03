@@ -8,5 +8,6 @@
     },
     "makefile.configureOnOpen": false,
     "esbonio.sphinx.confDir": "${workspaceFolder}/docs",
-    "esbonio.server.enabled": false
+    "esbonio.server.enabled": false,
+    "dotnet.defaultSolution": "disable"
 }
