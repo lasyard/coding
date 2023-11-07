@@ -90,5 +90,7 @@ proxy() {
 }
 
 if [ -x "/opt/rh/devtoolset-11/enable" ]; then
-    source /opt/rh/devtoolset-11/enable
+    source "/opt/rh/devtoolset-11/enable" # Centos7
+elif [ -x "/opt/rh/gcc-toolset-11/enable" ]; then
+    source "/opt/rh/gcc-toolset-11/enable" # Centos8
 fi
