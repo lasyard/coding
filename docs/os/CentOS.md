@@ -17,6 +17,9 @@ sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|"
 
 ```sh
 dnf install gcc-toolset-11
+dnf install autoconf
+dnf install automake
+dnf install libtool
 ```
 
 ```sh
