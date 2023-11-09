@@ -16,3 +16,6 @@
 [submodule "cpp/msvc"]
 	path = cpp/msvc
 	url = git@github.com:lasyard/coding-cpp-msvc.git
+[submodule "python/kids"]
+	path = python/kids
+	url = git@github.com:lasyard/coding-python-kids.git
