@@ -35,4 +35,5 @@ gradle build
 gradle build -x test
 gradle run
 gradle clean
+gradle publishToMavenLocal -Psigning.password=xxxxxxxx
 ```
