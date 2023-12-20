@@ -37,7 +37,6 @@ for formula in \
     composer \
     ffmpeg \
     jq \
-    node \
     wget; do
     brew_install "${formula}"
 done
