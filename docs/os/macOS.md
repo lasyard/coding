@@ -1,5 +1,13 @@
 # macOS
 
+## Monterey
+
+### brew install
+
+```sh
+brew install googletest
+```
+
 ## Big Sur
 
 ### Install "Oh My Zsh"

@@ -13,6 +13,13 @@ sed -i -e "s|mirrorlist=|#mirrorlist=|" /etc/yum.repos.d/CentOS-Linux-*.repo
 sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|" /etc/yum.repos.d/CentOS-Linux-*.repo
 ```
 
+### dnf
+
+```sh
+dnf list installed
+dnf repoquery -l <package-name>
+```
+
 ### Install development tools
 
 ```sh
