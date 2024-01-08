@@ -20,3 +20,10 @@ date -j -f "%y%m%d%H%M%S" "+%s" 020202020202
 sudo chmod -R -x photo
 chmod -R +X photo
 ```
+
+### Find empty directory
+
+```sh
+find . -type d -empty
+find . -type d -empty -delete
+```
