@@ -4,6 +4,8 @@
    用 `mediainfo` 显示多媒体文件信息并用 `jq` 提取主要信息成一行文本
 1. `centos_yum_install.sh`  
    CentOS 上用 yum 安装常用软件
+1. `datify`  
+   从文件名中提取时间戳并以此时间命名文件
 1. `hz_count.sh`  
    统计汉字个数
 1. `install_java_bin.sh`  
