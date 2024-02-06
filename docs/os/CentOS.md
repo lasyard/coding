@@ -27,6 +27,7 @@ dnf install gcc-toolset-11
 dnf install autoconf
 dnf install automake
 dnf install libtool
+dnf install clang-tools-extra # clang-format, clang-tidy, etc.
 ```
 
 ```sh
