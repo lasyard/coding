@@ -44,14 +44,15 @@ fi
 # Set JAVA_HOME
 if [ -x "/usr/libexec/java_home" ]; then # for MacOS
     JAVA_HOME="$(/usr/libexec/java_home -v "1.8.0")"
-    export JAVA_HOME
+elif [ -e "/usr/lib/jvm/java" ]; then # JDK is installed on Linux
+    JAVA_HOME="/usr/lib/jvm/java"
 else
     java_path=$(command -v java)
     if [ -n "${java_path}" ]; then
         JAVA_HOME="${java_path%/bin/java}"
-        export JAVA_HOME
     fi
 fi
+export JAVA_HOME
 
 # MySql
 if [ -d "/usr/local/mysql/bin" ]; then
