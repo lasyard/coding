@@ -6,6 +6,21 @@
 cat /etc/centos-release
 ```
 
+### Set ulimit
+
+```sh
+ulimit -n 1048576
+```
+
+```sh
+vi /etc/security/limits.conf
+```
+
+> ```csv
+> root             hard    nofile          1048576
+> root             soft    nofile          1048576
+> ```
+
 ### Change repo url
 
 ```sh
