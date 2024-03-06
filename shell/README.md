@@ -16,5 +16,7 @@
    macOS 上用 homebrew 安装常用软件
 1. `profile.sh`  
    Shell 登录脚本
+1. `scps.sh`
+   用 `scp` 把一个文件复制到多个远程主机
 1. `venc.sh`  
    使用 `ffmpeg` 编码视频为 mp4

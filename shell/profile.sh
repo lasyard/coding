@@ -83,8 +83,8 @@ proxy() {
         echo "Unset proxies."
         return
     fi
-    if [ -x "${HOME}/.proxy.sh" ]; then
-        source "${HOME}/.proxy.sh"
+    if [ -x "${HOME}/bin/proxy.sh" ]; then
+        source "${HOME}/bin/proxy.sh"
     else
         echo "No proxy found."
     fi
