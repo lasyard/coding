@@ -13,7 +13,7 @@ HOST="$@"
 
 echo "Copy ${FILE} to ${TARGET_DIR} on host ${HOST} ..."
 
-echo "${HOST}" | xargs -n 1 -P 0 -I "{}" scp "${FILE}" "{}:${TARGET_DIR}"
+echo "${HOST}" | tr ' ' '\n' | xargs -n 1 -P 0 -I "{}" scp "${FILE}" "{}:${TARGET_DIR}"
 
 wait
 
