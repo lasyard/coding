@@ -19,3 +19,6 @@
 [submodule "python/kids"]
 	path = python/kids
 	url = git@github.com:lasyard/coding-python-kids.git
+[submodule "go"]
+	path = go
+	url = git@github.com:lasyard/coding-go.git
