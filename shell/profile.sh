@@ -1,0 +1,108 @@
+# Set PATH
+if [ -d "${HOME}/bin" ]; then
+    PATH="${HOME}/bin:${PATH}"
+fi
+if [ -d "/usr/local/sbin" ]; then
+    PATH="${PATH}:/usr/local/sbin"
+fi
+# for brew installed llvm on macOS
+if [ -d "/usr/local/opt/llvm/bin" ]; then
+    PATH="/usr/local/opt/llvm/bin:${PATH}"
+fi
+
+export PATH
+
+# If the current shell is not interactive, the scripts after this are useless.
+# Especially, any output would break utilities like `scp`.
+case $- in
+*i*) ;;
+*)
+    return
+    ;;
+esac
+
+if [ "${SHELL}" = "/bin/bash" ] && [ -f "${HOME}/.bashrc" ]; then
+    source ${HOME}/.bashrc
+fi
+
+# Alias
+alias df='df -h'
+alias du='du -h'
+if ! command -v 'l' >/dev/null; then
+    alias l='ls -lah'
+fi
+
+# macOS
+if [ "$(uname)" = "Darwin" ]; then
+    if command -v 'mvim' >/dev/null; then
+        # Set mvim
+        alias vi='mvim --remote-tab-silent'
+        alias vidiff='mvim -d'
+        # Use original vim for fc
+        export FCEDIT=vim
+    fi
+else
+    if command -v 'vim' >/dev/null; then
+        alias vi=vim
+        # for `systemctl edit`
+        if command -v 'systemctl' >/dev/null; then
+            export SYSTEMD_EDITOR="$(command -v 'vim')"
+        fi
+    fi
+fi
+
+# Set JAVA_HOME
+if [ -x "/usr/libexec/java_home" ]; then # for MacOS
+    if /usr/libexec/java_home 2>/dev/null; then
+        JAVA_HOME="$(/usr/libexec/java_home -v "1.8.0")"
+    else
+        echo "Java is not installed, so JAVA_HOME is not set."
+    fi
+elif [ -e "/usr/lib/jvm/java" ]; then # JDK is installed on Linux
+    JAVA_HOME="/usr/lib/jvm/java"
+else
+    java_path=$(command -v java)
+    if [ -n "${java_path}" ]; then
+        JAVA_HOME="${java_path%/bin/java}"
+    fi
+fi
+export JAVA_HOME
+
+# MySql
+if [ -d "/usr/local/mysql/bin" ]; then
+    PATH="${PATH}:/usr/local/mysql/bin"
+fi
+
+# Set GPG_TTY
+GPG_TTY=$(tty)
+export GPG_TTY
+
+# Set ssh agent
+TOKEN="${HOME}/.ssh/id_rsa"
+if [ -f "${TOKEN}" ]; then
+    # Do not start agent if the current shell is remotely logged in.
+    if [ -z "${SSH_CLIENT}" ] && [ -z "${SSH_TTY}" ]; then
+        eval "$(ssh-agent)"
+        ssh-add "${TOKEN}"
+    fi
+fi
+
+# Set Homebrew mirror
+if command -v brew >/dev/null && [ -x "${HOME}/bin/brew_tuna.sh" ]; then
+    source "${HOME}/bin/brew_tuna.sh"
+fi
+
+# Set proxy
+proxy() {
+    if [ -x "${HOME}/bin/proxy.sh" ]; then
+        source "${HOME}/bin/proxy.sh" "$1"
+    else
+        echo "No proxy found."
+    fi
+}
+
+if [ -x "/opt/rh/devtoolset-11/enable" ]; then
+    source "/opt/rh/devtoolset-11/enable" # Centos7
+elif [ -x "/opt/rh/gcc-toolset-11/enable" ]; then
+    source "/opt/rh/gcc-toolset-11/enable" # Centos8
+fi
