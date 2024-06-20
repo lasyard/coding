@@ -1,17 +1,3 @@
-# Set PATH
-if [ -d "${HOME}/bin" ]; then
-    PATH="${HOME}/bin:${PATH}"
-fi
-if [ -d "/usr/local/sbin" ]; then
-    PATH="${PATH}:/usr/local/sbin"
-fi
-# for brew installed llvm on macOS
-if [ -d "/usr/local/opt/llvm/bin" ]; then
-    PATH="/usr/local/opt/llvm/bin:${PATH}"
-fi
-
-export PATH
-
 # If the current shell is not interactive, the scripts after this are useless.
 # Especially, any output would break utilities like `scp`.
 case $- in
@@ -21,8 +7,27 @@ case $- in
     ;;
 esac
 
+# Set PATH
+if [ -d "${HOME}/bin" ]; then
+    PATH="${HOME}/bin:${PATH}"
+fi
+if [ -d "/usr/local/sbin" ]; then
+    PATH="${PATH}:/usr/local/sbin"
+fi
+# For brew installed llvm on macOS
+if [ -d "/usr/local/opt/llvm/bin" ]; then
+    PATH="/usr/local/opt/llvm/bin:${PATH}"
+fi
+
+export PATH
+
 if [ "${SHELL}" = "/bin/bash" ] && [ -f "${HOME}/.bashrc" ]; then
     source ${HOME}/.bashrc
+fi
+
+# Disable dotnet telemetry
+if [ command -v "dotnet" ] >/dev/null; then
+    export DOTNET_CLI_TELEMETRY_OPTOUT=1
 fi
 
 # Alias
