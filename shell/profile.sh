@@ -26,7 +26,7 @@ if [ "${SHELL}" = "/bin/bash" ] && [ -f "${HOME}/.bashrc" ]; then
 fi
 
 # Disable dotnet telemetry
-if [ command -v "dotnet" ] >/dev/null; then
+if command -v "dotnet" >/dev/null; then
     export DOTNET_CLI_TELEMETRY_OPTOUT=1
 fi
 
