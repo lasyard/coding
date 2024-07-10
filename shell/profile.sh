@@ -1,3 +1,6 @@
+# For zsh, cp to ~/.zlogin
+# For bash, cp to ~/.bash_profile (CentOS) or ~/.profile (Ubuntu)
+
 # If the current shell is not interactive, the scripts after this are useless.
 # Especially, any output would break utilities like `scp`.
 case $- in
@@ -33,8 +36,9 @@ fi
 # Alias
 alias df='df -h'
 alias du='du -h'
-if ! command -v 'l' >/dev/null; then
-    alias l='ls -lah'
+alias l='ls -lah'
+if command -v "kubectl" >/dev/null; then
+    alias k='kubectl'
 fi
 
 # macOS
@@ -85,6 +89,7 @@ export GPG_TTY
 # Set ssh agent
 TOKEN="${HOME}/.ssh/id_rsa"
 if [ -f "${TOKEN}" ]; then
+    trap 'test -n "$SSH_AGENT_PID" && eval `/usr/bin/ssh-agent -k`' 0
     # Do not start agent if the current shell is remotely logged in.
     if [ -z "${SSH_CLIENT}" ] && [ -z "${SSH_TTY}" ]; then
         eval "$(ssh-agent)"
