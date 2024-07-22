@@ -14,4 +14,5 @@
 | `profile.sh`            | Shell 登录脚本                                                    |
 | `scps.sh`               | 用 `scp` 把一个文件复制到多个远程主机                             |
 | `pluml_to_png.sh`       | 用 plantuml 将 PlantUML 文档转换为 PNG 格式的图片                 |
+| `sfoto.sh`              | 使用 `exiftool` 整理图片                                          |
 | `venc.sh`               | 使用 `ffmpeg` 编码视频为 mp4                                      |

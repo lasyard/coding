@@ -8,8 +8,10 @@ if [ $# -lt 2 ]; then
 fi
 
 SOURCE_DIR="$1"
-TARGET_DIR="$2"
-EXTRA_OPTS="$3"
+shift
+TARGET_DIR="$1"
+shift
+EXTRA_OPTS="$@"
 
 SOURCE_PATH="$(dirname "${SOURCE_DIR}")"
 DIR="$(basename "${SOURCE_DIR}")"
