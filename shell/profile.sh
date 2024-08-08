@@ -25,7 +25,7 @@ fi
 export PATH
 
 if [ "${SHELL}" = "/bin/bash" ] && [ -f "${HOME}/.bashrc" ]; then
-    source ${HOME}/.bashrc
+    . ${HOME}/.bashrc
 fi
 
 # Disable dotnet telemetry
@@ -39,6 +39,8 @@ alias du='du -h'
 alias l='ls -lah'
 if command -v "kubectl" >/dev/null; then
     alias k='kubectl'
+    # using kube config in ${HOME}/.kube
+    unset KUBECONFIG
 fi
 
 # macOS
@@ -99,20 +101,20 @@ fi
 
 # Set Homebrew mirror
 if command -v brew >/dev/null && [ -x "${HOME}/bin/brew_tuna.sh" ]; then
-    source "${HOME}/bin/brew_tuna.sh"
+    . "${HOME}/bin/brew_tuna.sh"
 fi
 
 # Set proxy
 proxy() {
     if [ -x "${HOME}/bin/proxy.sh" ]; then
-        source "${HOME}/bin/proxy.sh" "$1"
+        . "${HOME}/bin/proxy.sh" "$1"
     else
         echo "No proxy found."
     fi
 }
 
 if [ -x "/opt/rh/devtoolset-11/enable" ]; then
-    source "/opt/rh/devtoolset-11/enable" # Centos7
+    . "/opt/rh/devtoolset-11/enable" # Centos7
 elif [ -x "/opt/rh/gcc-toolset-11/enable" ]; then
-    source "/opt/rh/gcc-toolset-11/enable" # Centos8
+    . "/opt/rh/gcc-toolset-11/enable" # Centos8
 fi
