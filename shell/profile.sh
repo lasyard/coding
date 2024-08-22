@@ -113,8 +113,9 @@ proxy() {
     fi
 }
 
-if [ -x "/opt/rh/devtoolset-11/enable" ]; then
-    . "/opt/rh/devtoolset-11/enable" # Centos7
-elif [ -x "/opt/rh/gcc-toolset-11/enable" ]; then
-    . "/opt/rh/gcc-toolset-11/enable" # Centos8
+# for scl-utils on CentOS
+if command -v scl >/dev/null; then
+    for c in $(scl list-collections); do
+        . scl_source enable $c
+    done
 fi
