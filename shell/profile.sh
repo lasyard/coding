@@ -24,8 +24,11 @@ fi
 
 export PATH
 
-if [ "${SHELL}" = "/bin/bash" ] && [ -f "${HOME}/.bashrc" ]; then
-    . ${HOME}/.bashrc
+if [ "${SHELL}" = "/bin/bash" ]; then
+    if [ -f "${HOME}/.bashrc" ]; then
+        . ${HOME}/.bashrc
+    fi
+    PS1="\[\033[0;45;32m\]\u@\h\[\033[0m\]:\[\033[32m\]\w$\[\033[0m\] "
 fi
 
 # Disable dotnet telemetry
