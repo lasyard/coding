@@ -122,3 +122,8 @@ if command -v scl >/dev/null; then
         . scl_source enable $c
     done
 fi
+
+# for Spack
+if [ -f "${HOME}/opt/spack/share/spack/setup-env.sh" ]; then
+    . "${HOME}/opt/spack/share/spack/setup-env.sh"
+fi
