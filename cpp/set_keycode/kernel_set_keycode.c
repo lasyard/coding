@@ -1,9 +1,3 @@
-/* To compile it, first write a Makefile contains this
- * obj-m += kernel_set_keycode.o
- * then execute make
- * make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
- */
-
 #include <linux/input.h>
 #include <linux/module.h>
 
