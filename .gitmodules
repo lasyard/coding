@@ -22,3 +22,6 @@
 [submodule "go"]
 	path = go
 	url = git@github.com:lasyard/coding-go.git
+[submodule "cpp/crypto-file"]
+	path = cpp/crypto-file
+	url = git@github.com:lasyard/crypto-file.git
