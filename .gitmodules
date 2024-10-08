@@ -25,3 +25,6 @@
 [submodule "cpp/crypto-file"]
 	path = cpp/crypto-file
 	url = git@github.com:lasyard/crypto-file.git
+[submodule "cpp/segmental-csv"]
+	path = cpp/segmental-csv
+	url = git@github.com:lasyard/segmental-csv.git
