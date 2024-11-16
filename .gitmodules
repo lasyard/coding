@@ -28,3 +28,6 @@
 [submodule "cpp/segmental-csv"]
 	path = cpp/segmental-csv
 	url = git@github.com:lasyard/segmental-csv.git
+[submodule "mixly/arduino"]
+	path = mixly/arduino
+	url = git@github.com:lasyard/coding-mixly-arduino.git
