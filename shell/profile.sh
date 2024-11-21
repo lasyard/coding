@@ -124,6 +124,7 @@ if command -v scl >/dev/null; then
 fi
 
 # for Spack
+export SPACK_USER_CACHE_PATH="${HOME}/.cache/spack"
 if [ -f "${HOME}/opt/spack/share/spack/setup-env.sh" ]; then
     . "${HOME}/opt/spack/share/spack/setup-env.sh"
 fi
