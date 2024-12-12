@@ -55,6 +55,11 @@ if [ "$(uname)" = "Darwin" ]; then
         # Use original vim for fc
         export FCEDIT=vim
     fi
+    # macOS version <= 12 is no longer supported by Homebrew, do not update
+    if [ "$(sw_vers -productVersion | cut -d . -f 1)" -lt 13 ]; then
+        export HOMEBREW_NO_AUTO_UPDATE=1
+        export HOMEBREW_NO_INSTALL_FROM_API=1
+    fi
 else
     if command -v 'vim' >/dev/null; then
         alias vi=vim
@@ -100,11 +105,6 @@ if [ -f "${TOKEN}" ]; then
         eval "$(ssh-agent)"
         ssh-add "${TOKEN}"
     fi
-fi
-
-# Set Homebrew mirror
-if command -v brew >/dev/null && [ -x "${HOME}/bin/brew_tuna.sh" ]; then
-    . "${HOME}/bin/brew_tuna.sh"
 fi
 
 # Set proxy
