@@ -1,0 +1,6 @@
+*.ko
+*.mod.c
+
+Module.symvers
+compile_commands.json
+modules.order
