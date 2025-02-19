@@ -10,10 +10,6 @@
 
 #define MOD_NAME "khook"
 
-#define PT_REGS_PARM1(x) ((x)->di)
-#define PT_REGS_PARM2(x) ((const char *const *)(x)->si)
-#define PT_REGS_PARM3(x) ((x)->dx)
-
 typedef unsigned long f_kallsyms_lookup_name_t(const char *name);
 
 static f_kallsyms_lookup_name_t *f_kallsyms_lookup_name;
@@ -43,7 +39,7 @@ static bool is_file(int fd, const char *name)
     file = fget(fd);
     path = &file->f_path;
     path_get(path);
-    buf = (char *)kmalloc(GFP_KERNEL, PAGE_SIZE);
+    buf = (char *)kmalloc(PAGE_SIZE, GFP_KERNEL);
     if (!buf) {
         path_put(path);
         return false;
@@ -94,7 +90,6 @@ f_callback(unsigned long ip, unsigned long parent_ip, struct ftrace_ops *op, str
     // in this function regs is not populated to the paras of syscall
     if (is_task("cat")) {
         pr_info("ip = %pS, parent-ip = %pS, address = %pS\n", (void *)ip, (void *)parent_ip, g_sys_read);
-        // dump_pt_regs(&regs->regs);
         ftrace_instruction_pointer_set(regs, (unsigned long)m_read);
     }
 }
@@ -108,7 +103,7 @@ static void install_hook(void *address, struct ftrace_ops *ops)
         return;
     }
     if ((err = register_ftrace_function(ops))) {
-        pr_err(MOD_NAME "register_ftrace_function() failed: %d\n", err);
+        pr_err(MOD_NAME ": register_ftrace_function() failed: %d\n", err);
         ftrace_set_filter_ip(ops, (unsigned long)address, 1, 0);
         return;
     }
@@ -143,7 +138,7 @@ static int __init khook_init(void)
     }
     g_sys_read = (void *)f_kallsyms_lookup_name(name);
     if (!g_sys_read) {
-        pr_err(MOD_NAME ": cannot get address of \"%s\"", name);
+        pr_err(MOD_NAME ": cannot get address of \"%s\"\n", name);
         return -1;
     }
     install_hook(g_sys_read, &ops);

@@ -1,0 +1,7 @@
+-I/usr/src/linux-headers-5.15.0-131-generic/include
+-I/usr/src/linux-headers-5.15.0-131-generic/include/generated
+-I/usr/src/linux-headers-5.15.0-131-generic/arch/x86/include
+-I/usr/src/linux-headers-5.15.0-131-generic/arch/x86/include/generated
+-include /usr/src/linux-headers-5.15.0-131-generic/include/linux/kconfig.h
+-D__KERNEL__
+-DMODULE
