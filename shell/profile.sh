@@ -109,7 +109,7 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 # Set ssh agent
-TOKEN="${HOME}/.ssh/id_rsa"
+TOKEN="${HOME}/.ssh/id_ed25519"
 if [ -f "${TOKEN}" ]; then
     trap 'test -n "$SSH_AGENT_PID" && eval `/usr/bin/ssh-agent -k`' 0
     # Do not start agent if the current shell is remotely logged in.
