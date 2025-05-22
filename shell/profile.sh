@@ -20,18 +20,9 @@ fi
 # For brew installed llvm on macOS
 if [ -d "/usr/local/opt/llvm/bin" ]; then
     PATH="/usr/local/opt/llvm/bin:${PATH}"
-    # problems for wxWidgets building
-    # CC=clang
-    # CXX=clang++
-    # if command -v "xcode-select" >/dev/null; then
-    #     CFLAGS="-I$(xcode-select -p)/SDKs/MacOSX.sdk/usr/include"
-    #     LDFLAGS="-L$(xcode-select -p)/SDKs/MacOSX.sdk/usr/lib"
-    # fi
-    # CPPFLAGS="${CFLAGS} -I/usr/local/opt/llvm/include"
-    # CXXFLAGS="${CFLAGS} -I/usr/local/opt/llvm/include"
-    # CFLAGS="${CFLAGS} -I/usr/local/opt/llvm/include"
-    # LDFLAGS="${LDFLAGS} -L/usr/local/opt/llvm/lib"
-    # export CC CXX CFLAGS CPPFLAGS CXXFLAGS LDFLAGS
+    CC=clang
+    CXX=clang++
+    export CC CXX
 fi
 
 export PATH
