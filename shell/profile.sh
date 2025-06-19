@@ -28,10 +28,11 @@ fi
 export PATH
 
 if [ "${SHELL}" = "/bin/bash" ]; then
+    PS1="\[\033[0;45;32m\]\u@\h\[\033[0m\]:\[\033[32m\]\w$\[\033[0m\] "
+    # conda will change PS1
     if [ -f "${HOME}/.bashrc" ]; then
         . ${HOME}/.bashrc
     fi
-    PS1="\[\033[0;45;32m\]\u@\h\[\033[0m\]:\[\033[32m\]\w$\[\033[0m\] "
 fi
 
 # Disable dotnet telemetry
