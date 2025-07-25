@@ -17,12 +17,16 @@ fi
 if [ -d "/usr/local/sbin" ]; then
     PATH="${PATH}:/usr/local/sbin"
 fi
-# For brew installed llvm on macOS
+
+# For brew installed keg-only Formulae on macOS
 if [ -d "/usr/local/opt/llvm/bin" ]; then
     PATH="/usr/local/opt/llvm/bin:${PATH}"
     CC=clang
     CXX=clang++
     export CC CXX
+fi
+if [ -d "/usr/local/opt/curl/bin" ]; then
+    PATH="/usr/local/opt/curl/bin:${PATH}"
 fi
 
 export PATH
