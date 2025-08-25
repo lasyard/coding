@@ -54,6 +54,11 @@ if command -v "kubectl" >/dev/null; then
     unset KUBECONFIG
 fi
 
+# Alias to bypass bastion host filter
+alias uadd='sudo useradd'
+alias udel='sudo userdel'
+alias umod='sudo usermod'
+
 # macOS
 if [ "$(uname)" = "Darwin" ]; then
     if command -v 'mvim' >/dev/null; then
@@ -105,7 +110,7 @@ if [ -f "${TOKEN}" ]; then
     # Do not start agent if the current shell is remotely logged in.
     if [ -z "${SSH_CLIENT}" ] && [ -z "${SSH_TTY}" ]; then
         eval "$(ssh-agent)"
-        ssh-add "${TOKEN}"
+        ssh-add "${TOKEN}" "${HOME}/.ssh/las.key"
     fi
 fi
 
