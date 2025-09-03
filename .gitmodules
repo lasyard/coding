@@ -22,6 +22,3 @@
 [submodule "js"]
 	path = js
 	url = git@github.com:lasyard/coding-js.git
-[submodule "cpp/cmm-script"]
-	path = cpp/cmm-script
-	url = git@github.com:lasyard/cmm-script.git
