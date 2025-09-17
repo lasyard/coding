@@ -106,15 +106,11 @@ fi
 GPG_TTY=$(tty)
 export GPG_TTY
 
-# Set ssh agent
-TOKEN="${HOME}/.ssh/id_ed25519"
-if [ -f "${TOKEN}" ]; then
-    trap 'test -n "$SSH_AGENT_PID" && eval `/usr/bin/ssh-agent -k`' 0
-    # Do not start agent if the current shell is remotely logged in.
-    if [ -z "${SSH_CLIENT}" ] && [ -z "${SSH_TTY}" ]; then
-        eval "$(ssh-agent)"
-        ssh-add "${TOKEN}" "${HOME}/.ssh/las.key"
-    fi
+# Set ssh agent, token is added in ssh config
+trap 'test -n "$SSH_AGENT_PID" && eval `/usr/bin/ssh-agent -k`' 0
+# Do not start agent if the current shell is remotely logged in.
+if [ -z "${SSH_CLIENT}" ] && [ -z "${SSH_TTY}" ]; then
+    eval "$(ssh-agent)"
 fi
 
 # Set proxy
