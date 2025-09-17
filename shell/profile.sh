@@ -50,6 +50,9 @@ alias du='du -h'
 alias l='ls -lah'
 if command -v "kubectl" >/dev/null; then
     alias k='kubectl'
+    alias kget='kubectl get -owide'
+    alias kdesc='kubectl describe'
+    alias kdel='kubectl delete'
     # using kube config in ${HOME}/.kube
     unset KUBECONFIG
 fi
