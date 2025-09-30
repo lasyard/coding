@@ -22,3 +22,6 @@
 [submodule "js"]
 	path = js
 	url = git@github.com:lasyard/coding-js.git
+[submodule "rust"]
+	path = rust
+	url = git@github.com:lasyard/coding-rust.git
