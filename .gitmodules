@@ -1,0 +1,21 @@
+[submodule "cpp/cmake"]
+	path = cpp/cmake
+	url = git@github.com:lasyard/coding-cpp-cmake.git
+[submodule "cpp/msvc"]
+	path = cpp/msvc
+	url = git@github.com:lasyard/coding-cpp-msvc.git
+[submodule "java/maven"]
+	path = java/maven
+	url = git@github.com:lasyard/coding-java-maven.git
+[submodule "java/gradle"]
+	path = java/gradle
+	url = git@github.com:lasyard/coding-java-gradle.git
+[submodule "js"]
+	path = js
+	url = git@github.com:lasyard/coding-js.git
+[submodule "go"]
+	path = go
+	url = git@github.com:lasyard/coding-go.git
+[submodule "rust"]
+	path = rust
+	url = git@github.com:lasyard/coding-rust.git
