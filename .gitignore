@@ -1,0 +1,10 @@
+.*
+!.gitignore
+!.gitattributes
+!.gitmodules
+!.editorconfig
+
+*.log
+
+# VSCode files
+!.vscode/
