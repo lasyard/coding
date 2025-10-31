@@ -19,3 +19,6 @@
 [submodule "rust"]
 	path = rust
 	url = git@github.com:lasyard/coding-rust.git
+[submodule "cpp/cmm-script"]
+	path = cpp/cmm-script
+	url = git@github.com:lasyard/cmm-script.git
