@@ -1,3 +1,6 @@
 {
+    "files.associations": {
+        "*.m": "matlab"
+    },
     "cmake.ignoreCMakeListsMissing": true
 }
