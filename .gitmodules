@@ -22,3 +22,6 @@
 [submodule "cpp/cmm-script"]
 	path = cpp/cmm-script
 	url = git@github.com:lasyard/cmm-script.git
+[submodule "python/kids"]
+	path = python/kids
+	url = git@github.com:lasyard/coding-python-kids.git
