@@ -25,3 +25,6 @@
 [submodule "python/kids"]
 	path = python/kids
 	url = git@github.com:lasyard/coding-python-kids.git
+[submodule "arduino"]
+	path = arduino
+	url = git@github.com:lasyard/coding-arduino.git

@@ -122,6 +122,15 @@ proxy() {
     fi
 }
 
+# Set kubeconfig
+kubeconfig() {
+    if [ -f "${HOME}/.kube/${1}_config" ]; then
+        export KUBECONFIG="${HOME}/.kube/${1}_config"
+    else
+        echo "No kubeconfig for cluster \"${1}\" found."
+    fi
+}
+
 # for scl-utils on CentOS
 if command -v scl >/dev/null; then
     for c in $(scl list-collections); do
