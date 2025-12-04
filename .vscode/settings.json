@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "*.m": "matlab"
+        "*.m": "matlab",
+        "*.ino": "c"
     },
     "cmake.ignoreCMakeListsMissing": true,
     "markdownlint.config": {
