@@ -48,14 +48,6 @@ fi
 alias df='df -h'
 alias du='du -h'
 alias l='ls -lah'
-if command -v "kubectl" >/dev/null; then
-    alias k='kubectl'
-    alias kget='kubectl get -owide'
-    alias kdesc='kubectl describe'
-    alias kdel='kubectl delete'
-    # using kube config in ${HOME}/.kube
-    unset KUBECONFIG
-fi
 
 # Alias to bypass bastion host filter
 alias uadd='sudo useradd'
@@ -142,4 +134,18 @@ fi
 export SPACK_USER_CACHE_PATH="${HOME}/opt/spack-data"
 if [ -f "${HOME}/opt/spack/share/spack/setup-env.sh" ]; then
     . "${HOME}/opt/spack/share/spack/setup-env.sh"
+fi
+
+# for kubectl
+if command -v "kubectl" >/dev/null; then
+    alias k='kubectl'
+    alias kget='kubectl get -owide'
+    alias kdesc='kubectl describe'
+    alias kdel='kubectl delete'
+    alias kapp='kubectl apply -f'
+    # using kube config in ${HOME}/.kube
+    unset KUBECONFIG
+    if [ -x ${HOME}/.krew/bin/kubectl-krew ]; then
+        export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+    fi
 fi
