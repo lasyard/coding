@@ -5,6 +5,7 @@
 | `basic_mediainfo.sh`    | 用 `mediainfo` 显示多媒体文件信息并用 `jq` 提取主要信息成一行文本 |
 | `centos_yum_install.sh` | CentOS 上用 `yum` 安装常用软件                                    |
 | `datify`                | 从文件名中提取时间戳并以此时间命名文件                            |
+| `gpu_allocated.sh`      | 按节点统计 GPU 使用量（只考虑 Running Pods）                      |
 | `hz_count.sh`           | 统计汉字个数                                                      |
 | `install_java_bin.sh`   | 安装 java Binary 包                                               |
 | `lasync.sh`             | 使用 `rsync` 进行同步                                             |
