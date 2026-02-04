@@ -68,6 +68,9 @@ if [ "$(uname)" = "Darwin" ]; then
         export HOMEBREW_NO_AUTO_UPDATE=1
         export HOMEBREW_NO_INSTALL_FROM_API=1
     fi
+    if command -v 'fzf' >/dev/null; then
+        . <(fzf --zsh)
+    fi
 else
     if command -v 'vim' >/dev/null; then
         alias vi=vim
