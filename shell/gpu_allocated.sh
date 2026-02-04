@@ -4,7 +4,7 @@ set -euo pipefail
 # report per-node GPU capacity, allocatable and allocated (only count Running pods)
 # prints OVERCOMMIT when allocated > allocatable
 
-printf "%-16s %8s %12s %12s %s\n" "NODE" "GPU_CAP" "GPU_ALLOCATABLE" "GPU_ALLOCATED" "NOTE"
+printf "%-16s %8s %16s %14s %s\n" "NODE" "GPU_CAP" "GPU_ALLOCATABLE" "GPU_ALLOCATED" "NOTE"
 
 for node in $(kubectl get nodes -o name | sed 's|node/||'); do
     cap=$(kubectl get node "$node" -o jsonpath='{.status.capacity.nvidia\.com/gpu}' 2>/dev/null || echo 0)
@@ -23,7 +23,7 @@ for node in $(kubectl get nodes -o name | sed 's|node/||'); do
         note="OVERCOMMIT"
     fi
 
-    printf "%-16s %8s %12s %12s %s\n" "$node" "${cap:-0}" "${alloc:-0}" "${allocated:-0}" "$note"
+    printf "%-16s %8s %16s %14s %s\n" "$node" "${cap:-0}" "${alloc:-0}" "${allocated:-0}" "$note"
 done
 
 exit 0
