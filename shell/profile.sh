@@ -25,8 +25,10 @@ if [ -d "/usr/local/opt/llvm/bin" ]; then
     CXX=clang++
     export CC CXX
 fi
-if [ -d "/usr/local/opt/curl/bin" ]; then
+if [ -d "/usr/local/opt/curl/bin" ]; then # macOS 12 and earlier, curl is keg-only
     PATH="/usr/local/opt/curl/bin:${PATH}"
+elif [ -d "/opt/homebrew/opt/curl/bin" ]; then # macOS 13 and later, Homebrew is installed in /opt/homebrew
+    PATH="/opt/homebrew/opt/curl/bin:${PATH}"
 fi
 
 export PATH
