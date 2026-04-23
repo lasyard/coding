@@ -18,6 +18,14 @@ if [ -d "/usr/local/sbin" ]; then
     PATH="${PATH}:/usr/local/sbin"
 fi
 
+# Homebrew on Apple Silicon
+if [ -d "/opt/homebrew/bin" ]; then
+    PATH="/opt/homebrew/bin:${PATH}"
+fi
+if [ -d "/opt/homebrew/sbin" ]; then
+    PATH="/opt/homebrew/sbin:${PATH}"
+fi
+
 # For brew installed keg-only Formulae on macOS
 if [ -d "/usr/local/opt/llvm/bin" ]; then
     PATH="/usr/local/opt/llvm/bin:${PATH}"
