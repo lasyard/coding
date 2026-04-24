@@ -111,11 +111,14 @@ fi
 GPG_TTY=$(tty)
 export GPG_TTY
 
-# Set ssh agent, token is added in ssh config
-trap 'test -n "$SSH_AGENT_PID" && eval `/usr/bin/ssh-agent -k`' 0
-# Do not start agent if the current shell is remotely logged in.
+# do not start agent if the current shell is remotely logged in
 if [ -z "${SSH_CLIENT}" ] && [ -z "${SSH_TTY}" ]; then
-    eval "$(ssh-agent)"
+    # macOS Tahoe has agent started by launchd, so we can use it if it's still valid
+    ssh-add -l >/dev/null 2>&1
+    if [ $? -eq 2 ]; then
+        eval "$(ssh-agent)"
+        trap 'test -n "$SSH_AGENT_PID" && eval `/usr/bin/ssh-agent -k`' 0
+    fi
 fi
 
 # Set proxy
