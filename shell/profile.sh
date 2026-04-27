@@ -111,16 +111,6 @@ fi
 GPG_TTY=$(tty)
 export GPG_TTY
 
-# do not start agent if the current shell is remotely logged in
-if [ -z "${SSH_CLIENT}" ] && [ -z "${SSH_TTY}" ]; then
-    # macOS Tahoe has agent started by launchd, so we can use it if it's still valid
-    ssh-add -l >/dev/null 2>&1
-    if [ $? -eq 2 ]; then
-        eval "$(ssh-agent)"
-        trap 'test -n "$SSH_AGENT_PID" && eval `/usr/bin/ssh-agent -k`' 0
-    fi
-fi
-
 # Set proxy
 proxy() {
     if [ -x "${HOME}/bin/proxy.sh" ]; then
@@ -146,7 +136,9 @@ fi
 # for kubectl
 if command -v "kubectl" >/dev/null; then
     alias k='kubectl'
-    alias kget='kubectl get -owide'
+    alias kget='kubectl get'
+    alias kgetw='kubectl get -owide'
+    alias kgety='kubectl get -oyaml'
     alias kdesc='kubectl describe'
     alias kdel='kubectl delete'
     alias kapp='kubectl apply' # don't put `-f` here, or the completion will be broken
