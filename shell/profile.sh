@@ -142,6 +142,7 @@ if command -v "kubectl" >/dev/null; then
     alias kdesc='kubectl describe'
     alias kdel='kubectl delete'
     alias kapp='kubectl apply' # don't put `-f` here, or the completion will be broken
+    alias kapi='kubectl api-resources | grep'
     # using kube config in ${HOME}/.kube
     unset KUBECONFIG
     if [ -x ${HOME}/.krew/bin/kubectl-krew ]; then
