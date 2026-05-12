@@ -149,3 +149,15 @@ if command -v "kubectl" >/dev/null; then
         export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
     fi
 fi
+
+# for git
+if command -v "git" >/dev/null; then
+    alias g='git'
+    alias ga='git add'
+    alias gc='git commit'
+    alias gd='git diff'
+    alias gl='git pull'
+    alias glog='git log --oneline --decorate --graph'
+    alias gp='git push'
+    alias gst='git status'
+fi
