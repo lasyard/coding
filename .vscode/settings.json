@@ -6,5 +6,8 @@
     "cmake.ignoreCMakeListsMissing": true,
     "markdownlint.config": {
         "MD014": false
+    },
+    "files.exclude": {
+        "cpp/cmake/": true
     }
 }
