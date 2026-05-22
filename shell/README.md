@@ -11,6 +11,7 @@
 | `macos_brew_install.sh` | macOS 上用 `brew` 安装常用软件                                    |
 | `mmd_to_png.sh`         | 用 mmdc 将 MMD 文档转换为 PNG 格式的图片                          |
 | `profile.sh`            | Shell 登录脚本                                                    |
+| `reduce_io.sh`          | macOS 上对移动存储禁用 Spotlight, Index 和 Time Machine           |
 | `scps.sh`               | 用 `scp` 把一个文件复制到多个远程主机                             |
 | `pluml_to_png.sh`       | 用 plantuml 将 PlantUML 文档转换为 PNG 格式的图片                 |
 | `sfoto.sh`              | 使用 `exiftool` 整理图片                                          |
