@@ -102,6 +102,10 @@ elif command -v 'java' >/dev/null; then # for Linux
     export $(/usr/bin/env java -XshowSettings:properties -version 2>&1 | grep 'java.home' | sed -e 's/java.home/JAVA_HOME/;s/ //g;')
 fi
 
+if command -v "go" >/dev/null; then
+    export PATH="${PATH}:$(go env GOPATH)/bin"
+fi
+
 # MySql
 if [ -d "/usr/local/mysql/bin" ]; then
     PATH="${PATH}:/usr/local/mysql/bin"
