@@ -8,6 +8,7 @@
         "MD014": false
     },
     "files.exclude": {
-        "cpp/cmake/": true
+        "cpp/cmake/": true,
+        "go/": true
     }
 }
