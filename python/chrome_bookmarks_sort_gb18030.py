@@ -9,6 +9,10 @@ Usage:
   chrome_bookmarks_sort_gb18030.py
   chrome_bookmarks_sort_gb18030.py --profile "~/Library/Application Support/Google/Chrome/Profile 1"
   chrome_bookmarks_sort_gb18030.py --list-backups
+
+Notes:
+- Intended for macOS. It may work on Linux with minor modifications
+- Reorder the bookmarks, but Chrome will not sync the changes between devices
 """
 
 from __future__ import annotations
